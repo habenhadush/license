@@ -1,20 +1,14 @@
-# GrandGain License Repository
+# GrandGain Runtime Configuration
 
-This is the **public** quarterly license distribution repository for GrandGain Automation NX products.
+Public runtime configuration and synchronization repository for GrandGain Automation NX services.
 
-## What is in this repo
+## Overview
 
 | File | Purpose |
 |---|---|
-| `license.json` | The active RSA-2048 signed quarterly license token |
+| `appsettings.json` | Active runtime configuration and synchronization manifest |
 
-## How it works
+## Synchronization
 
-- Client machines automatically fetch `license.json` over HTTPS on startup.
-- The token is cryptographically signed with RSA-2048 — it cannot be forged or modified.
-- No private keys or tooling are stored here. This repo contains only the signed output.
-
-## Update cycle
-
-A new `license.json` is generated each quarter and pushed to `main`.
-Clients automatically pick up the renewed token on their next launch — no installer needed.
+- Client applications synchronize configuration metadata over secure HTTPS.
+- Integrity is verified cryptographically using SHA-256 digests.
